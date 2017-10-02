@@ -1,0 +1,5 @@
+config/secret.json
+dist
+yarn.lock
+.vscode
+node_modules

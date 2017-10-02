@@ -1,0 +1,28 @@
+{
+  "name": "ub2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
+    "watch:serve": "ts-node --inspect src/index.ts",
+    "build": "tsc --outDir ./dist ./src/index",
+    "start": "./node_modules/.bin/ts-node -F ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.31",
+    "@types/node-fetch": "^1.6.7",
+    "@types/reflect-metadata": "^0.0.5",
+    "reflect-metadata": "^0.1.10",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "node-fetch": "^1.7.3",
+    "open-graph-scraper": "^2.5.5",
+    "wtf_wikipedia": "^2.1.0"
+  }
+}
