@@ -7,9 +7,15 @@ export class Bot {
   private commands = null;
 
   public async start() {
-    if (this.provider === null) throw Error("Pls set api provider first");
-    if (this.config === null) throw Error("Pls set config first");
-    if (this.commands === null) throw Error("Pls set commands first");
+    if (this.provider === null) {
+      throw Error("Pls set api provider first");
+    }
+    if (this.config === null) {
+      throw Error("Pls set config first");
+    }
+    if (this.commands === null) {
+      throw Error("Pls set commands first");
+    }
 
     this.provider.on("message", this.onMessage.bind(this));
 
@@ -34,7 +40,7 @@ export class Bot {
 
   private onMessage(message) {
     for (const cmd of this.commands) {
-      if (cmd.test(message)) {
+      if (cmd && cmd.test(message)) {
         cmd.exec(message);
       }
     }
