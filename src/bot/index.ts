@@ -40,7 +40,7 @@ export class Bot {
 
   private onMessage(message) {
     for (const cmd of this.commands) {
-      if (cmd && cmd.test(message)) {
+      if (cmd.test(message)) {
         cmd.exec(message);
       }
     }

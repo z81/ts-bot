@@ -1,10 +1,14 @@
-import { readdirSync } from "fs";
+import { readdirSync } from 'fs';
 
 const commands = [];
 
 readdirSync(__dirname).forEach(name => {
   if (name !== "commandBase.ts" && name !== "index.ts") {
-    commands.push(require(__dirname + "/" + name).default);
+    const exportDefault = require(__dirname + "/" + name).default;
+
+    if (typeof exportDefault === "object") {
+      commands.push(exportDefault);
+    }
   }
 });
 
