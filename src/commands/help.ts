@@ -27,6 +27,8 @@ class Help extends CommandBase {
       answer.addField(cmdName, cmd.description);
     }
 
+    answer.addField("Исходники", " https://github.com/z81/ts-bot ");
+
     message.reply(answer);
   }
 }
