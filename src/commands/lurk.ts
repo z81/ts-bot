@@ -32,14 +32,6 @@ class Lurk extends CommandBase {
         answer.setDescription(result.ogDescription);
       }
 
-      if (result.ogImage) {
-        if (result.ogImage.url[0] !== "h") {
-          result.ogImage.url = `http:${result.ogImage.url}`;
-        }
-        console.log(result.ogImage.url);
-        answer.setImage(result.ogImage.url);
-      }
-
       message.reply(answer);
     } catch (e) {
       message.reply("Не найдено");
